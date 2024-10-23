@@ -3,7 +3,6 @@ const router = express.Router();
 const User = require('../models/User');
 // const multer = require('multer');
 const path = require('path');
-const { redirect } = require('react-router-dom');
 const { generateToken } = require('../services/authentication');
 
 

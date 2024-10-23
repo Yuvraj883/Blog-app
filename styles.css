@@ -1,0 +1,27 @@
+.blog-cover-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.blog-content {
+  margin-top: 30px;
+}
+.comment-section {
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+.comment {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: rgba(243, 237, 237, 0.1); /* Optional: Change the border color */
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

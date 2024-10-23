@@ -14,7 +14,7 @@ const commentSchema = Schema({
     type:Schema.Types.ObjectId,
     ref:'Blog'
   }
-})
+}, {timestamps:true})
 
 const Comment = model('comment', commentSchema);
 module.exports = Comment;

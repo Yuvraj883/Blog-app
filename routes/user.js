@@ -35,7 +35,7 @@ router.post('/sign-up' , async (req, res)=>{
     fullName,
     password,
     email,
-    profileImage
+    profileImage: profileImage || undefined
   });
   const token = generateToken(newUser);
   res.cookie('token', token).redirect('/');

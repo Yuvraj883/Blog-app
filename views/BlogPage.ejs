@@ -63,7 +63,7 @@
       <% } else { %>
         <p>No comments yet. Be the first to comment!</p>
       <% } %>
-
+      <% if(user) {%>
       <!-- Comment Form -->
       <form action="/blog/<%= blog._id %>/comment" method="post" class="mt-3">
 
@@ -75,7 +75,7 @@
       </form>
     </div>
   </div>
-
+<%}%>
   <!-- Include Scripts partial -->
   <%- include('./partials/Scripts') %>
 

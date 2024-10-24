@@ -55,7 +55,7 @@
 
         <% comments.forEach(comment => { %>
           <div class="comment">
-            <p class="text-muted">Posted by <%= blog.createdBy.fullName %> on <%= new Date(blog.createdAt).toLocaleDateString() %></p>
+            <p class="text-muted">Posted by <%= comment.createdBy.fullName %> on <%= new Date(blog.createdAt).toLocaleDateString() %></p>
 
             <p><%= comment.content %></p>
           </div>

@@ -25,3 +25,18 @@
 .navbar-dark .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
+.card-img-top {
+  height: 250px; /* Set a fixed height for the image */
+  object-fit: cover; /* Ensure the image scales properly without distortion */
+}
+.card {
+  height: 100%; /* Make card take up full height */
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Align content properly */
+}
+.btn {
+  margin-top: auto; /* Keep the button at the bottom */
+}

@@ -33,7 +33,7 @@ router.post('/add-blog', uploads.single('coverImage'), async(req, res)=>{
     createdBy : req.user._id,
     coverImage: `uploads/${coverImage}`
   })
-  console.log(blog);
+  // console.log(blog);
   return res.redirect('/');
 
 })
@@ -43,7 +43,7 @@ router.get('/:id', async (req, res)=>{
   const comments  = await Comment.find({blogId: req.params.id}).populate('createdBy');
   console.log("comment", await Comment.find({blogId:req.params.id}));
   // console.log("Blog------",blog);
-  console.log(req.user);
+  // console.log(req.user);
 
   res.render('BlogPage', {
     blog: blog,

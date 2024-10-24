@@ -50,13 +50,35 @@ router.get('/logout', (req, res)=>{
 
 router.get('/profile', async(req, res)=>{
   const blogs = await Blog.find({createdBy: req.user._id});
-  const comments =await Comment.find({createdBy:req.user.id});
+  const comments =await Comment.find({createdBy:req.user._id});
   res.render('UserProfile', {
     user: req.user,
     blogs:blogs,
     comments: comments
 
   });
+})
+
+router.post('/update/profile-image', async (req, res)=>{
+  try{
+    const user = await User.findById(req.user._id);
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    user.profileImage = req.body.profileImage;
+    console.log(user);
+
+    await user.save();
+    console.log(user);
+
+    return res.redirect('/user/profile');
+  }
+  catch(error){
+    console.log(error);
+   return res.status(500).send('Something went wrong');
+  }
+
 })
 
 module.exports = router;

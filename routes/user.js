@@ -4,6 +4,8 @@ const User = require('../models/User');
 // const multer = require('multer');
 const path = require('path');
 const { generateToken } = require('../services/authentication');
+const Blog = require('../models/Blog');
+const Comment = require('../models/Comment');
 
 
 router.get('/sign-in', (req, res)=>{
@@ -44,6 +46,17 @@ router.post('/sign-up' , async (req, res)=>{
 
 router.get('/logout', (req, res)=>{
   res.clearCookie('token').redirect('/');
+})
+
+router.get('/profile', async(req, res)=>{
+  const blogs = await Blog.find({createdBy: req.user._id});
+  const comments =await Comment.find({createdBy:req.user.id});
+  res.render('UserProfile', {
+    user: req.user,
+    blogs:blogs,
+    comments: comments
+
+  });
 })
 
 module.exports = router;

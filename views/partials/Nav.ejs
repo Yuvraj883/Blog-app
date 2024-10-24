@@ -37,7 +37,9 @@
       <% if(locals.user){ %>
       <!-- Profile Image positioned at the right -->
       <div class="d-flex ms-auto align-items-center">
-        <img class="rounded-circle" width="60px" height="60px" src=<%= locals.user.profileImage %> alt="<%= locals.user.fullName %>" />
+        <a href="/user/profile">
+        <img class="rounded-circle " width="60px" height="60px" src=<%= locals.user.profileImage %> alt="<%= locals.user.fullName %>" />
+        </a>
       </div>
       <% } %>
 
